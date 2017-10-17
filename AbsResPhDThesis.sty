@@ -1,0 +1,74 @@
+% **************************************************
+% AbsResPhDThesis
+% --- A LaTeX Style for Abstrct and Summary in book
+% Copyright (C) 2016 Jesus Guadalupe P. Flores
+% **************************************************
+\ProvidesPackage{AbsResPhDThesis}
+          [2015/12/29 v1.01 (Perez-Flores, 2015)]
+
+
+
+% **************************************************
+%	Configuración de resumen y abstract:
+% **************************************************
+% - Abstract Entorno: 
+\newcommand\summaryname{Abstract}
+\newenvironment{SummaryPhDThesis}%
+    {\small\begin{center}%
+    \bfseries\textcolor{iColor006}{\summaryname} \end{center}}%
+    %{}
+    
+% - Resumen Entorno: 
+\newcommand\resumenname{Resumen}
+\newenvironment{ResumenPhDThesis}%
+    {\small\begin{center}%
+    \bfseries\textcolor{iColor006}{\resumenname} \end{center}}%
+    %{}    
+    
+% - Key Words Entorno:    
+\newcommand\keywordsname{Keywords:}
+\newenvironment{keywordsPhDThesis}%
+    {\null\small\textbf{\textcolor{iColor006}{\keywordsname}}}%
+    
+% - Palabras clave Entorno:
+\newcommand\PalabrasClaveName{Palabras Clave:}
+\newenvironment{PalabrasClavePhDThesis}%
+    {\null\small\textbf{\textcolor{iColor006}{\PalabrasClaveName}}}%
+
+% - Highlights Entorno:    
+\newcommand\highlightsname{Highlights:}
+\newenvironment{HighlightsPhDThesis}%
+    {\null\small\textbf{\textcolor{iColor006}{\highlightsname}}}%
+
+% **************************************************
+%	Información de Autores:
+% **************************************************
+\makeatletter % Begin definition
+\def\printauthor{% Define command: \printtitle
+    {\@author}} % Typesetting
+\makeatother % End definition
+
+\author{%
+	%\textcolor{iColor006}{\large \scshape Desarrollo de vehículos a base de arabinoxilanos para la liberación controlada de hipoglucemiantes} \vspace{20pt} \\
+	%--------------
+	%\textbf{M. en C. Jesús Guadalupe Pérez Flores} \\
+	%\textcolor{iColor001}{Doctorado en Ciencia de los Alimentos y Salud Humana} \\
+	%\texttt{\href{mailto:jesusgpflores@gmail.com}{jesusgpflores@gmail.com}}\vspace{20pt} \\
+	%--------------
+	Dra. Araceli Casta{\~n}eda Ovando \\
+	\textcolor{iColor009}{Instituto de Ciencias B{\'a}sicas e Ingenier{\'i}a} \\
+	\texttt{\href{mailto:ovandoa@uaeh.edu.mx}{ovandoa@uaeh.edu.mx}}\vspace{10pt} \\
+	%--------------
+	Dra. Elizabeth Contreras L{\'o}pez \\
+	\textcolor{iColor009}{Instituto de Ciencias B{\'a}sicas e Ingenier{\'i}a}\\
+	\texttt{\href{mailto:eliclopez@yahoo.com.mx}{eliclopez@yahoo.com.mx}}\vspace{10pt} \\
+	%--------------
+	Dra. Raquel Cari{\~n}o Cort{\'e}s \\
+	\textcolor{iColor009}{Instituto de Ciencias de la Salud}\\
+	\texttt{\href{mailto:raquelcarcortes@gmail.com}{raquelcarcortes@gmail.com}}\vspace{10pt} \\
+	%--------------
+	Dra. Mirandeli Bautista {\'A}vila \\
+	\textcolor{iColor009}{Instituto de Ciencias de la Salud} \\
+	\texttt{\href{mailto:mirandeli@hotmail.com}{mirandeli@hotmail.com}}%\vspace{20pt} \\
+	%--------------
+	}

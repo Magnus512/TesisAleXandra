@@ -1,0 +1,114 @@
+% **************************************************
+% Tesis Doctoral: Desarrollo de vehículos a base de arabinoxilanos para la liberación controlada de metformina
+% Programa: Doctorado en Ciencias de los Alimentos y Salud Humana
+% Institución: Universidad Autónoma del Estado de Hidalgo
+% Editor: Nombre del estudiante de posgrado
+% **************************************************
+
+% **************************************************
+% Definición de documento:
+% **************************************************
+\documentclass[letterpaper,twoside,openright,final]{book}
+\usepackage{AleXandra}
+\usepackage{AbsResPhDThesis}
+\usepackage[object=vectorian]{pgfornament}
+\usetikzlibrary{calc}
+
+\input{structure.tex}
+\graphicspath{{pictures/}} % Localizacion de las figuras
+
+\makegloss % Crear glosario
+\makeindex % Crear índice
+
+% **************************************************
+% Comienza la escritura del documento:
+% **************************************************
+\begin{document}
+
+% **************************************************
+\frontmatter % --- InicioDocumento
+% **************************************************
+\pagestyle{empty} %Quita los números de las primeras páginas
+% --- Insertar PDFs: \includepdf[pages=inicial-final]{nombre_del_documento}
+	\includepdf[pages=1]{front/PortadaTesis} % Portada
+	\cleardoublepage
+
+	\includepdf[pages=1]{front/AutorizacionImpresion} %Autorización de impresión
+	\cleardoublepage
+	
+	\input{./front/Dedicatoria.tex} % Dedicatoria
+	\cleardoublepage
+	
+	\input{./front/Agradecimientos.tex} % Agradecimientos
+	\cleardoublepage
+	
+	\input{./front/OtrosAgradecimientos.tex} % OtrosAgradecimientos
+	\cleardoublepage
+
+
+% --- Índices, resumen y abstract
+\pagestyle{fancy}
+\pagenumbering{roman} % Para que inserte numeros arábigos.
+\setcounter{page}{1} % Para que inicie en la página 1.
+
+\tableofcontents
+	\addcontentsline{toc}{chapter}{Índice General}
+\listoffigures
+	\addcontentsline{toc}{chapter}{Índice de Figuras}
+\listoftables
+	\addcontentsline{toc}{chapter}{Índice de Tablas}
+
+	\phantomsection
+	\renewcommand{\glossname}{Glosario} %Traducir título
+	\printgloss{front/glosario} %Base de datos
+			
+	\include{front/Acronimos} % Lista de acrónimos
+	\include{front/AbstractPhDThesis} % Abstract
+	\include{front/ResumenPhDThesis} % Resumen
+	\include{front/C000} % Introducción
+
+% **************************************************
+\mainmatter % --- ContenidoPrincipal
+% **************************************************
+%\pagenumbering{arabic} % Para que inserte numeros arábigos.
+%\setcounter{page}{1} % Para que inicie en la página 1.
+
+	\include{main/C001} % Antecedentes
+	\include{main/C002} % Justificación
+	\include{main/C003} % Objetivos
+	\include{main/C004} % Metodología
+	\include{main/C005} % Resultados y discusión
+	\include{main/C006} % Conclusión
+	\include{main/C007} % Consideraciones futuras
+
+%incluimos los anexos
+	\renewcommand\appendixname{Anexo}
+	\appendix
+	\include{back/A001}% --- Curvas de calibrado
+
+% **************************************************
+\backmatter % --- FinalDocumento
+% **************************************************
+	\phantomsection
+	\addcontentsline{toc}{chapter}{Referencias}
+	\renewcommand{\bibname}{Referencias}
+	\bibliographystyle{back/apalike-es} %Estilo
+	\bibliography{back/referencias} %Base de datos
+		
+	\cleardoublepage
+	\phantomsection
+	\addcontentsline{toc}{chapter}{Índice alfabético}
+	\printindex
+	
+	\cleardoublepage
+	\include{back/Colophon}
+	 
+\end{document}
+
+
+% Compilar con PDFLaTeX y BibTeX
+% *****************************************************************
+% Líneas de comandos en la terminal del editor LaTeX para compilar:
+% *****************************************************************
+% Glosario: bibtex Tesis.gls.aux
+% Índice alfabético: makeindex -s StyleInd.ist Tesis.idx

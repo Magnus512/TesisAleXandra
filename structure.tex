@@ -1,0 +1,60 @@
+% **************************************************
+%	Configuración del idioma:
+% **************************************************
+\usepackage[utf8]{inputenc}
+\usepackage[english, spanish, es-tabla]{babel}
+\selectlanguage{spanish}
+
+% **************************************************
+%	Paquetes:
+% **************************************************
+\usepackage{amsmath,amsthm,amsfonts,amssymb,gensymb,textcomp}
+\usepackage{graphicx} % Insertar figuras, [demo]
+\usepackage{subfig} % Insertar subfiguras
+\usepackage{psfrag,layout,listings}
+\usepackage{listings}
+\usepackage{tikz}
+\usepackage{xifthen}
+\usepackage[skins]{tcolorbox} %Insertar cajas.
+\usepackage{marvosym} %Insertar símbolos de contacto.
+\usepackage[Glenn]{fncychap} %Options: Sonny, Lenny, Glenn, Conny, Rejne, Bjarne, Bjornstrup
+\usepackage[final]{pdfpages} %Configuración de PDF Externos
+
+\usepackage{makeidx} % Índice alfabético
+\usepackage[printonlyused,withpage]{acronym} % Crear lista de acrónimos.
+\usepackage[refpages]{gloss} %Configuración de glosario
+\usepackage{appendix} %Configuración de anexos
+\usepackage[authoryear]{natbib} %orden establecido en el argumento
+\usepackage{apalike}
+
+\usepackage{multicol} % utilizar texto en columnas
+\setlength{\columnseprule}{0.2pt}
+
+\spanishdecimal{.} %Cambia las comas por puntos en los números
+
+
+% **************************************************
+%	Formato de hipervínculos:
+% **************************************************
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks=true,
+	citecolor=iColor006,
+	filecolor=iColor006,
+	linkcolor=iColor006,
+	urlcolor=iColor006,
+	bookmarksopen=true,
+	pdfpagelayout=TwoPageRight,
+	pdftitle={Development arabinoxylans devices for controlled release of metformin},
+	pdfauthor={Jesús Guadalupe P. Flores},
+	pdfsubject={PhD Thesis JGPFlores},
+	pdfproducer={LaTeX},
+	pdfkeywords={Feruloylated arabinoxylans, Hydrogels, Metformin}
+}
+
+% **************************************************
+%	Formato de contadores de secciones y subsecciones:
+% **************************************************
+\makeatletter
+\renewcommand\@seccntformat[1]{\color{iColor001!80} {\csname the#1\endcsname}\hspace{0.5em}}
+\makeatother
